@@ -1,5 +1,3 @@
-#!/bin/sh
-# 
 # Cross compilation for Windows
 # This works on Arch Linux out of the box, just install mingw-w64-cmake from
 # AUR. (e.g. with yaourt -ySa mingw-w64-cmake)
@@ -14,4 +12,4 @@ mkdir ${BUILD_DIR}
 cd ${BUILD_DIR}
 
 ${TARGET}-cmake -DBoost_USE_STATIC_LIBS:BOOL=ON -DCMAKE_EXE_LINKER_FLAGS="-static" -DCMAKE_BUILD_TYPE="Release" ..
-make
+make -j
